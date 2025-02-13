@@ -181,3 +181,7 @@ SNS
 ## ■ 画面遷移図
 
 [figmaリンク(画面遷移図)](https://www.figma.com/design/3rytLNfqrNQao838aCVutT/%E3%83%97%E3%83%AB%E3%83%BC%E3%82%B9%E3%83%88%E3%83%9D%E3%82%A8%E3%83%A0_%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C_%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=gAiLQN1jjQkR0I6V-1)
+
+## ■ ER図
+
+[![Image from Gyazo](https://i.gyazo.com/9e304504d61ea4890297b18a8e46a246.png)](https://gyazo.com/9e304504d61ea4890297b18a8e46a246)
