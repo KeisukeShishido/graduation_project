@@ -1,42 +1,23 @@
-<%= form_with(model: poem) do |form| %>
-  <% if poem.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(poem.errors.count, "error") %> prohibited this poem from being saved:</h2>
-
-      <ul>
-        <% poem.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+<%= form_with(model: @poem, local: true) do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :aroma, style: "display: block" %>
-    <%= form.text_field :aroma %>
+  <div class="mb-3">
+    <%= f.label :aroma, "香り" %>
+    <%= f.text_field :aroma, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
+  <div class="mb-3">
+    <%= f.label :location, "場所・シチュエーション" %>
+    <%= f.text_field :location, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+  <div class="mb-3">
+    <%= f.label :content, "感情・記憶" %>
+    <%= f.text_area :content, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= f.submit "記録する", class: "btn btn-success" %>
 <% end %>
