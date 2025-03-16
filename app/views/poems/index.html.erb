@@ -1,16 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<h1>記録されたポエム</h1>
 
-<% content_for :title, "Poems" %>
+<% if user_signed_in? %>
+  <%= link_to "新しいポエムを記録", new_poem_path, class: "btn btn-primary" %>
+<% end %>
 
-<h1>Poems</h1>
-
-<div id="poems">
+<ul class="list-group">
   <% @poems.each do |poem| %>
-    <%= render poem %>
-    <p>
-      <%= link_to "Show this poem", poem %>
-    </p>
+    <li class="list-group-item">
+      <strong><%= link_to poem.title, poem %></strong>
+      <br>
+      <small>香り: <%= poem.aroma %> / 場所: <%= poem.location %></small>
+      <br>
+      <small>投稿者: <%= poem.user.user_name %></small>
+      <% if poem.user == current_user %>
+        <%= link_to "削除", poem, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-sm btn-danger" %>
+      <% end %>
+    </li>
   <% end %>
-</div>
-
-<%= link_to "New poem", new_poem_path %>
+</ul>
