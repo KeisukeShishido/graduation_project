@@ -2,7 +2,8 @@ require "test_helper"
 
 class PoemsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @poem = poems(:one)
+    @user = create(:user)  # FactoryBot でユーザーを作成
+    @poem = create(:poem, user: @user)  # そのユーザーに紐づく詩を作成
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class PoemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create poem" do
     assert_difference("Poem.count") do
-      post poems_url, params: { poem: { aroma: @poem.aroma, content: @poem.content, location: @poem.location, title: @poem.title, user_id: @poem.user_id } }
+      post poems_url, params: { poem: { aroma: @poem.aroma, content: @poem.content, location: @poem.location, title: @poem.title, user_id: @user_id } }
     end
 
     assert_redirected_to poem_url(Poem.last)
@@ -34,7 +35,7 @@ class PoemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update poem" do
-    patch poem_url(@poem), params: { poem: { aroma: @poem.aroma, content: @poem.content, location: @poem.location, title: @poem.title, user_id: @poem.user_id } }
+    patch poem_url(@poem), params: { poem: { aroma: @poem.aroma, content: @poem.content, location: @poem.location, title: @poem.title, user_id: @user_id } }
     assert_redirected_to poem_url(@poem)
   end
 
