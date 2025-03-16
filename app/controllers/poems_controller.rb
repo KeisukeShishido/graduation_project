@@ -1,13 +1,16 @@
 class PoemsController < ApplicationController
-  before_action :set_poem, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_poem, only: %i[ edit update destroy ]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   # GET /poems or /poems.json
   def index
-    @poems = Poem.all
+    @poems = Poem.order(created_at: :desc)
   end
 
   # GET /poems/1 or /poems/1.json
   def show
+    @poem = Poem.find(params[:id])
   end
 
   # GET /poems/new
@@ -21,7 +24,7 @@ class PoemsController < ApplicationController
 
   # POST /poems or /poems.json
   def create
-    @poem = Poem.new(poem_params)
+    @poem = current_user.poems.build(poem_params)
 
     respond_to do |format|
       if @poem.save
@@ -58,13 +61,15 @@ class PoemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_poem
-      @poem = Poem.find(params[:id])
+      @poem = current_user.poems.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def poem_params
-      params.require(:poem).permit(:title, :aroma, :location, :content, :user_id)
+      params.require(:poem).permit(:title, :aroma, :location, :content)
+    end
+
+    def authorize_user!
+      redirect_to poems_path, alert: "権限がありません" unless @poem.user == current_user
     end
 end
