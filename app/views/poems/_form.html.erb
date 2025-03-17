@@ -1,0 +1,23 @@
+<%= form_with(model: @poem, local: true) do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :aroma, "香り" %>
+    <%= f.text_field :aroma, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :location, "場所・シチュエーション" %>
+    <%= f.text_field :location, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :content, "感情・記憶" %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <%= f.submit "記録する", class: "btn btn-success" %>
+<% end %>
