@@ -2,8 +2,8 @@ require "test_helper"
 
 class PoemsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @poem = poems(:one) # fixture を使う
     @user = users(:one) # ユーザーの fixture を取得
+    @poem = poems(:one) # fixture を使う
   end
 
   test "should get index" do
