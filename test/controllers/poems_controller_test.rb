@@ -4,6 +4,8 @@ class PoemsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one) # ユーザーの fixture を取得
     @poem = poems(:one) # fixture を使う
+
+    sign_in @user # ← Devise のログインヘルパーを追加
   end
 
   test "should get index" do
@@ -17,6 +19,7 @@ class PoemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create poem" do
+    sign_in @user # 追加
     assert_difference("Poem.count") do
       post poems_url, params: { poem: { aroma: @poem.aroma, content: @poem.content, location: @poem.location, title: @poem.title, user_id: @poem.user_id  } }
     end
@@ -35,11 +38,13 @@ class PoemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update poem" do
+    sign_in @user # 追加
     patch poem_url(@poem), params: { poem: { aroma: @poem.aroma, content: @poem.content, location: @poem.location, title: @poem.title, user_id: @poem.user_id  } }
     assert_redirected_to poem_url(@poem)
   end
 
   test "should destroy poem" do
+    sign_in @user # 追加
     assert_difference("Poem.count", -1) do
       delete poem_url(@poem)
     end
