@@ -52,7 +52,8 @@ class PoemsController < ApplicationController
 
   # DELETE /poems/1 or /poems/1.json
   def destroy
-    @poem.destroy!
+    poem = current_user.poems.find(params[:id])
+    poem.destroy!
 
     respond_to do |format|
       format.html { redirect_to poems_path, status: :see_other, notice: "Poem was successfully destroyed." }
@@ -62,7 +63,10 @@ class PoemsController < ApplicationController
 
   private
     def set_poem
-      @poem = current_user.poems.find(params[:id])
+      @poem = current_user.poems.find_by(id: params[:id])
+      if @poem.nil?
+        redirect_to poems_path, alert: '詩が見つかりません。別の詩を確認してください。'
+      end
     end
 
     def poem_params
