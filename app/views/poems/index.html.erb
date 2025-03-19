@@ -12,9 +12,6 @@
       <small>香り: <%= poem.aroma %> / 場所: <%= poem.location %></small>
       <br>
       <small>投稿者: <%= poem.user.user_name %></small>
-      <% if poem.user == current_user %>
-        <%= link_to "削除", poem, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-sm btn-danger" %>
-      <% end %>
     </li>
   <% end %>
 </ul>
