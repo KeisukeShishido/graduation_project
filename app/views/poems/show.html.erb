@@ -3,8 +3,17 @@
 <%= render @poem %>
 
 <div>
-  <%= link_to "Edit this poem", edit_poem_path(@poem) %> |
-  <%= link_to "Back to poems", poems_path %>
+  <% if user_signed_in? %>
+    <% if current_user == @poem.user %>
+      <%= link_to edit_poem_path(@poem) do %>
+        <i class="bi bi-pencil-fill"></i> Edit this poem
+      <% end %>
 
-  <%= button_to "Destroy this poem", @poem, method: :delete %>
+      <%= link_to poem_path(@poem), id: "button-delete-#{@poem.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+        <i class="bi bi-trash-fill"></i> Destroy this poem
+      <% end %>
+    <% else %>
+      <%= link_to "Back to poems", poems_path %>
+    <% end %>
+  <% end %>
 </div>

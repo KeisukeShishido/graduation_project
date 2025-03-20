@@ -62,7 +62,10 @@ class PoemsController < ApplicationController
 
   private
     def set_poem
-      @poem = current_user.poems.find(params[:id])
+      @poem = current_user.poems.find_by(id: params[:id])
+      if @poem.nil?
+        redirect_to poems_path, alert: "詩が見つかりません。別の詩を確認してください。"
+      end
     end
 
     def poem_params
