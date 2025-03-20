@@ -52,8 +52,7 @@ class PoemsController < ApplicationController
 
   # DELETE /poems/1 or /poems/1.json
   def destroy
-    poem = current_user.poems.find(params[:id])
-    poem.destroy!
+    @poem.destroy!
 
     respond_to do |format|
       format.html { redirect_to poems_path, status: :see_other, notice: "Poem was successfully destroyed." }
