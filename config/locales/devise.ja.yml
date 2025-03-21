@@ -1,0 +1,23 @@
+ja:
+  devise:
+    sessions:
+      user:
+        sign_in: 'ログイン'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        remember_me: 'ログイン状態を保持する'
+        sign_in_button: 'ログイン'
+        forgot_password: 'パスワードをお忘れですか？'
+    registrations:
+      user:
+        sign_up: '新規登録'
+        user_name: 'ユーザー名'
+        email: 'メールアドレス'
+        password: 'パスワード（6文字以上）'
+        password_confirmation: 'パスワード（確認用）'
+        sign_up_button: '新規登録'
+    errors:
+      messages:
+        invalid: '無効な情報です。'
+        blank: 'を入力してください'
+        too_short: 'は%{count}文字以上で入力してください'
