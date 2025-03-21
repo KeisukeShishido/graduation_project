@@ -26,7 +26,7 @@
                 <% end %>
 
                 <!-- 削除アイコン -->
-                <%= link_to poem_path(poem), id: "button-delete-#{poem.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') }, class: "btn-sm ml-2" do %>
+                <%= link_to poem_path(poem), id: "button-delete-#{poem.id}", data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn-sm ml-2" do %>
                   <i class="bi bi-trash-fill"></i>
                 <% end %>
               <% end %>
