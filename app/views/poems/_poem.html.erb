@@ -1,27 +1,27 @@
 <div id="<%= dom_id poem %>">
   <p>
-    <strong>Title:</strong>
+    <strong>タイトル:</strong>
     <%= poem.title %>
   </p>
 
   <p>
-    <strong>Aroma:</strong>
+    <strong>香りの種類:</strong>
     <%= poem.aroma %>
   </p>
 
   <p>
-    <strong>Location:</strong>
+    <strong>場所:</strong>
     <%= poem.location %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong>ポエムの内容:</strong>
     <%= poem.content %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= poem.user_id %>
+    <strong>ユーザーネーム:</strong>
+    <%= poem.user.user_name %>
   </p>
 
 </div>

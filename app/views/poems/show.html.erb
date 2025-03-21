@@ -1,4 +1,3 @@
-<p style="color: green"><%= notice %></p>
 
 <%= render @poem %>
 
@@ -6,14 +5,14 @@
   <% if user_signed_in? %>
     <% if current_user == @poem.user %>
       <%= link_to edit_poem_path(@poem) do %>
-        <i class="bi bi-pencil-fill"></i> Edit this poem
+        <i class="bi bi-pencil-fill"></i> 編集
       <% end %>
 
-      <%= link_to poem_path(@poem), id: "button-delete-#{@poem.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
-        <i class="bi bi-trash-fill"></i> Destroy this poem
+      <%= link_to poem_path(@poem), id: "button-delete-#{@poem.id}", data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } do %>
+        <i class="bi bi-trash-fill"></i> 削除
       <% end %>
     <% else %>
-      <%= link_to "Back to poems", poems_path %>
+      <%= link_to "戻る", poems_path %>
     <% end %>
   <% end %>
 </div>
