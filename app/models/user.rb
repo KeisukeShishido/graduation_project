@@ -5,7 +5,8 @@ class User < ApplicationRecord
   has_many :poems, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable,
+        authentication_keys: [:user_name]
 
   validates :user_name, presence: true
 end
