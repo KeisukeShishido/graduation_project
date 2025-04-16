@@ -3,6 +3,7 @@ ja:
     sessions:
       user:
         sign_in: 'ログイン'
+        user_name: 'ユーザーネーム'
         email: 'メールアドレス'
         password: 'パスワード'
         remember_me: 'ログイン状態を保持する'
@@ -19,5 +20,18 @@ ja:
     errors:
       messages:
         invalid: '無効な情報です。'
+        not_saved: "%{resource}の保存に失敗しました："
         blank: 'を入力してください'
         too_short: 'は%{count}文字以上で入力してください'
+    shared_links:
+      log_in: 'ログイン'
+      sign_up: 'アカウントを作成する'
+      forgot_password: 'パスワードをお忘れの方はこちら'
+      confirmation: '確認メールが届かない場合はこちら'
+      unlock: 'アカウントのロックを解除したい方はこちら'
+      omniauth: '%{provider}でログイン'
+    passwords:
+      user:
+        forgot_password_heading: "パスワードを再設定する"
+        email: "メールアドレス"
+        send_instructions: "パスワード再設定用のメールを送信する"
