@@ -35,3 +35,8 @@ ja:
         forgot_password_heading: "パスワードを再設定する"
         email: "メールアドレス"
         send_instructions: "パスワード再設定用のメールを送信する"
+        change_password_heading: "パスワードを変更する"
+        new_password: "新しいパスワード"
+        password_confirmation: "新しいパスワード（確認）"
+        minimum_password_length: "%{count}文字以上で入力してください"
+        change_password_button: "パスワードを変更する"
