@@ -1,12 +1,12 @@
 <% content_for :title, "Editing poem" %>
 
-<h1>編集画面</h1>
+<h1><%= t('views.posts.edit.title') %></h1>
 
 <%= render "form", poem: @poem %>
 
 <br>
 
 <div>
-  <%= link_to "詳細", @poem %> |
-  <%= link_to "戻る", poems_path %>
+  <%= link_to t('views.defaults.show'), @poem %> |
+  <%= link_to t('views.defaults.back'), poems_path %>
 </div>

@@ -1,26 +1,26 @@
 <div id="<%= dom_id poem %>">
   <p>
-    <strong>タイトル:</strong>
+    <strong><%= t('views.posts.form.title') %></strong>
     <%= poem.title %>
   </p>
 
   <p>
-    <strong>香りの種類:</strong>
+    <strong><%= t('views.posts.form.aroma') %></strong>
     <%= poem.aroma %>
   </p>
 
   <p>
-    <strong>場所:</strong>
+    <strong><%= t('views.posts.form.location') %></strong>
     <%= poem.location %>
   </p>
 
   <p>
-    <strong>ポエムの内容:</strong>
+    <strong><%= t('views.posts.form.content') %></strong>
     <%= poem.content %>
   </p>
 
   <p>
-    <strong>ユーザーネーム:</strong>
+    <strong><%= t('views.posts.form.user') %></strong>
     <%= poem.user.user_name %>
   </p>
 

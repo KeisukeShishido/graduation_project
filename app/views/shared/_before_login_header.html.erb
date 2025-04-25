@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
     <div class = "container">
-      <%= link_to "Top", root_path %>
+      <%= link_to t('views.shared.header.home'), root_path %>
 
       <button class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
         <span class="navbar-toggler-icon"></span>
@@ -10,16 +10,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto main-nav align-items-center">
           <li class="nav-item">
-            <%= link_to 'プルーストポエムとは？', manuals_index_path, class: "nav-link" %>
+            <%= link_to t('views.shared.header.about'), manuals_index_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Poem一覧', poems_path, class: "nav-link" %>
+            <%= link_to t('views.shared.header.posts'), poems_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %>
+            <%= link_to t('views.shared.header.sign_up'), new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+            <%= link_to t('views.shared.header.sign_in'), new_user_session_path, class: "nav-link" %>
           </li>
         </ul>
       </div>

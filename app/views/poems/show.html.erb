@@ -5,14 +5,17 @@
   <% if user_signed_in? %>
     <% if current_user == @poem.user %>
       <%= link_to edit_poem_path(@poem) do %>
-        <i class="bi bi-pencil-fill"></i> 編集
+        <i class="bi bi-pencil-fill"></i> <%= t('views.posts.show.edit') %>
       <% end %>
 
-      <%= link_to poem_path(@poem), id: "button-delete-#{@poem.id}", data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } do %>
-        <i class="bi bi-trash-fill"></i> 削除
+      <%= link_to poem_path(@poem), id: "button-delete-#{@poem.id}", data: { turbo_method: :delete, turbo_confirm: t('views.defaults.delete_confirm') } do %>
+        <i class="bi bi-trash-fill"></i> <%= t('views.defaults.delete') %>
       <% end %>
     <% else %>
-      <%= link_to "戻る", poems_path %>
     <% end %>
+
+    <div>
+      <%= link_to t('views.defaults.back'), poems_path %>
+    </div>
   <% end %>
 </div>

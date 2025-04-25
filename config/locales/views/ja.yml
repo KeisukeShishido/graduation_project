@@ -1,0 +1,82 @@
+ja:
+  views:
+    defaults:
+      create: 作成
+      post: 投稿
+      search_word: 検索ワード
+      edit: 編集
+      show: 詳細
+      delete: 削除
+      delete_confirm: 本当に削除しますか？
+      back: 戻る
+      flash_message:
+        created: "%{item}を作成しました"
+        not_created: "%{item}を作成出来ませんでした"
+        updated: "%{item}を更新しました"
+        not_updated: "%{item}を更新出来ませんでした"
+        deleted: "%{item}を削除しました"
+        require_login: ログインしてください
+
+    helpers:
+      submit:
+        create: 登録
+        submit: 記録する
+        update: 更新
+
+    shared:
+      header:
+        title: "ProustPoem"
+        home: "top"
+        about: "プルーストポエムとは？"
+        posts: "Poem一覧"
+        new_post: "Poem新規投稿"
+        sign_up: "新規登録"
+        sign_in: "ログイン"
+        sign_out: "ログアウト"
+
+    posts:
+      form:
+        title: "タイトル"
+        aroma: "香りの種類"
+        location: "場所"
+        content: "感情・記憶の内容"
+        submit: "記録する"
+        user: "ユーザーネーム"
+
+      index:
+        title: "投稿一覧"
+        no_posts: "投稿がまだありません。"
+        aroma: "香りの種類"
+        location: "場所"
+        author: "投稿者"
+
+      show:
+        title: "タイトル"
+        edit: "編集"
+
+      new:
+        title: "新規ポエム作成"
+        heading: "新規投稿作成"
+        submit: "投稿する"
+        back: "ポエム一覧に戻る"
+
+      edit:
+        title: "編集画面"
+        show: "詳細"
+        submit: "更新する"
+
+    comments:
+      create:
+        success: "コメントを投稿しました。"
+        failure: "コメントの投稿に失敗しました。"
+
+    users:
+      sessions:
+        new:
+          heading: "ログイン"
+          submit: "ログインする"
+
+      registrations:
+        new:
+          heading: "アカウント作成"
+          submit: "登録する"
