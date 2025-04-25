@@ -1,7 +1,7 @@
-<h1>ポエム一覧</h1>
+<h1><%= t('views.posts.index.title') %></h1>
 
 <% if user_signed_in? %>
-  <%= link_to "新しいポエムを記録", new_poem_path, class: "btn btn-primary" %>
+  <%= link_to t('views.shared.header.new_post'), new_poem_path, class: "btn btn-primary" %>
 <% end %>
 
 <div class="container mt-4">
@@ -21,20 +21,20 @@
 
                 <% if current_user == poem.user %>
                 <!-- 編集アイコン -->
-                <%= link_to edit_poem_path(poem), class: "btn-sm ml-2" do %>
+                <%= link_to edit_poem_path(poem), class: "btn-sm ml-2", title: t('views.defaults.edit') do %>
                   <i class="bi bi-pencil-fill"></i>
                 <% end %>
 
                 <!-- 削除アイコン -->
-                <%= link_to poem_path(poem), id: "button-delete-#{poem.id}", data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn-sm ml-2" do %>
+                <%= link_to poem_path(poem), id: "button-delete-#{poem.id}", data: { turbo_method: :delete, turbo_confirm: t('views.defaults.delete_confirm') }, class: "btn-sm ml-2", title: t('views.defaults.delete') do %>
                   <i class="bi bi-trash-fill"></i>
                 <% end %>
               <% end %>
               </h5>
 
-              <p class="text-muted text-left">香りの種類: <%= poem.aroma %></p>
-              <p class="text-muted text-left">場所: <%= poem.location %></p>
-              <p class="text-muted text-left">投稿者: <%= poem.user.user_name %></p>
+              <p class="text-muted text-left"><%= t('views.posts.index.aroma') %>: <%= poem.aroma %></p>
+              <p class="text-muted text-left"><%= t('views.posts.index.location') %>: <%= poem.location %></p>
+              <p class="text-muted text-left"><%= t('views.posts.index.author') %>: <%= poem.user.user_name %></p>
             </div>
           </div>
         </div>
