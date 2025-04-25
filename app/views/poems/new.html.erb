@@ -1,11 +1,11 @@
-<% content_for :title, "New poem" %>
+<% content_for :title, t('views.posts.new.title') %>
 
-<h1>新規作成</h1>
+<h1><%= t('views.posts.new.heading') %></h1>
 
 <%= render "form", poem: @poem %>
 
 <br>
 
 <div>
-  <%= link_to "戻る", poems_path %>
+  <%= link_to t('views.posts.new.back'), poems_path, class: "btn btn-secondary" %>
 </div>
