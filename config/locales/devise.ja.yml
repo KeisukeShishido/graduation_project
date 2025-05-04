@@ -1,6 +1,9 @@
 ja:
   devise:
     sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+      already_signed_out: "ログアウトしました。"
       user:
         sign_in: 'ログイン'
         user_name: 'ユーザーネーム'
@@ -10,6 +13,7 @@ ja:
         sign_in_button: 'ログイン'
         forgot_password: 'パスワードをお忘れですか？'
     registrations:
+      signed_up: "ユーザー登録が完了しました。"
       user:
         sign_up: '新規登録'
         user_name: 'ユーザー名'
@@ -31,10 +35,11 @@ ja:
       unlock: 'アカウントのロックを解除したい方はこちら'
       omniauth: '%{provider}でログイン'
     passwords:
-      user:
+        updated: パスワードが正しく変更されました。
         forgot_password_heading: "パスワードを再設定する"
         email: "メールアドレス"
-        send_instructions: "パスワード再設定用のメールを送信する"
+        send_instructions: "パスワード再設定用のメールを送信しました"
+        send_email: "再設定用のメールを送信"
         change_password_heading: "パスワードを変更する"
         new_password: "新しいパスワード"
         password_confirmation: "新しいパスワード（確認）"
