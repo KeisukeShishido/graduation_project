@@ -1,15 +1,15 @@
-<h2><%= t('devise.passwords.user.forgot_password_heading') %></h2>
+<h2><%= t('devise.passwords.forgot_password_heading') %></h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email,t('devise.passwords.user.email') %><br />
+    <%= f.label :email,t('devise.passwords.email') %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="actions">
-    <%= f.submit t('devise.passwords.user.send_instructions') %>
+    <%= f.submit t('devise.passwords.send_email') %>
   </div>
 <% end %>
 
