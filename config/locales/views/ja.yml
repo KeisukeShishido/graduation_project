@@ -15,6 +15,7 @@ ja:
         updated: "%{item}を更新しました"
         not_updated: "%{item}を更新出来ませんでした"
         deleted: "%{item}を削除しました"
+        not_found: "%{item}が見つかりません。"
         require_login: ログインしてください
 
     helpers:
